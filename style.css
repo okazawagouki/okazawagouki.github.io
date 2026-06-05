@@ -1,0 +1,215 @@
+/* Okazawa Lab — GitHub Pages stylesheet */
+
+:root {
+  --accent: #2a5298;
+  --accent-light: #4a72c4;
+  --text: #1a1a1a;
+  --muted: #555;
+  --bg: #ffffff;
+  --bg-alt: #f5f7fa;
+  --border: #dde2ea;
+  --max-width: 860px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* ── Nav ── */
+nav {
+  background: var(--accent);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+nav .nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 1.5rem;
+}
+
+nav .site-title {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 1rem 0;
+  margin-right: auto;
+  white-space: nowrap;
+}
+
+nav a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.875rem;
+  padding: 1rem 0.75rem;
+  display: inline-block;
+  transition: color 0.15s;
+}
+
+nav a:hover, nav a.active { color: #fff; }
+
+nav a.active {
+  border-bottom: 2px solid rgba(255,255,255,0.8);
+}
+
+/* ── Page wrapper ── */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+/* ── Typography ── */
+h1 { font-size: 2rem; margin-bottom: 0.25rem; color: var(--accent); }
+h2 { font-size: 1.3rem; margin-top: 2.5rem; margin-bottom: 0.6rem; color: var(--accent); border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+h3 { font-size: 1.05rem; margin-top: 1.5rem; margin-bottom: 0.3rem; }
+h4 { font-size: 0.95rem; margin-top: 1rem; color: var(--muted); }
+
+p { margin-bottom: 0.9rem; }
+a { color: var(--accent); }
+a:hover { color: var(--accent-light); }
+
+/* ── Home hero ── */
+.home-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.home-hero img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--border);
+}
+
+.home-hero .bio h1 { margin-bottom: 0.15rem; }
+.home-hero .bio .position { color: var(--muted); font-size: 0.95rem; margin-bottom: 0.8rem; }
+
+/* ── Research themes ── */
+.research-theme {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--accent);
+  padding: 1.2rem 1.4rem;
+  margin: 1.5rem 0;
+  border-radius: 0 6px 6px 0;
+}
+.research-theme h3 { margin-top: 0; color: var(--accent); }
+
+/* ── Questions list ── */
+.questions-list {
+  list-style: none;
+  padding: 0;
+}
+.questions-list li {
+  padding: 0.7rem 0 0.7rem 1.2rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.questions-list li:last-child { border-bottom: none; }
+.questions-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ── Publications ── */
+.pub-section { margin-bottom: 0.5rem; }
+
+.pub-entry {
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.pub-entry:last-child { border-bottom: none; }
+
+.pub-num { color: var(--muted); font-size: 0.85rem; min-width: 2rem; display: inline-block; }
+.pub-title { font-weight: 600; }
+.pub-authors { color: var(--muted); font-size: 0.92rem; }
+.pub-journal { font-style: italic; color: var(--muted); font-size: 0.92rem; }
+.pub-links a {
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  margin-right: 4px;
+  text-decoration: none;
+}
+
+.pub-featured {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
+}
+.pub-featured .pub-title { font-size: 1rem; }
+.pub-featured .pub-summary { font-size: 0.92rem; margin-top: 0.4rem; margin-bottom: 0.4rem; }
+
+/* ── CV timeline ── */
+.cv-entry { padding: 1rem 0; border-bottom: 1px solid var(--border); display: flex; gap: 1.5rem; }
+.cv-entry:last-child { border-bottom: none; }
+.cv-year { color: var(--muted); font-size: 0.88rem; min-width: 7rem; flex-shrink: 0; padding-top: 0.1rem; }
+.cv-content h3 { margin-top: 0; font-size: 1rem; }
+.cv-content p { margin: 0.15rem 0; font-size: 0.93rem; color: var(--muted); }
+
+/* ── Resources ── */
+.resource-card {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+}
+.resource-card h3 { margin-top: 0; font-size: 1rem; }
+.resource-card .resource-url { font-size: 0.82rem; color: var(--muted); margin-bottom: 0.4rem; word-break: break-all; }
+
+/* ── Contact ── */
+.contact-info { font-size: 0.95rem; line-height: 2; }
+
+/* ── Footer ── */
+footer {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+/* ── Keywords tag ── */
+.keywords {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0.5rem 0 1.5rem;
+}
+.keywords span {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2px 10px;
+  margin: 2px;
+  display: inline-block;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .home-hero { flex-direction: column; }
+  .home-hero img { width: 100px; height: 100px; }
+  nav .site-title { font-size: 0.85rem; }
+  nav a { padding: 1rem 0.5rem; font-size: 0.78rem; }
+}
